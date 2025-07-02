@@ -1,0 +1,17 @@
+ktor:
+  application:
+    modules:
+      - com.fuse.code.order.processing.ApplicationKt.module
+  deployment:
+    port: 8081
+jwt:
+  domain: "https://jwt-provider-domain/"
+  audience: "jwt-audience"
+  issuer: "ktor-issuer"
+  realm: "order processing service"
+  secret: "aL9gD#7vK@w2$Pz!uN4qR%XeL1tY^cMh"
+
+kafka:
+  bootstrap.servers: "localhost:9092"
+  topic: "order-events"
+
