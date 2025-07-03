@@ -17,6 +17,10 @@ fun Application.module() {
     configureRouting()
 
     launch {
-        KafkaConsumerWorker.startConsuming()
+        try {
+            KafkaConsumerWorker.startConsuming()
+        }catch (e:Exception){
+            println("Kafka connection failed: ${e.message}")
+        }
     }
 }
